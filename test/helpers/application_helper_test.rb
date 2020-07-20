@@ -3,8 +3,8 @@ require 'test_helper'
 class ApplicationHelperTest < ActionView::TestCase
   
   test "full title helper" do
-    assert_equal full_title, "HomeBuddies"
-    assert_equal full_title("Help"), "Help | HomeBuddies"
+    assert_equal full_title, "CoffeeRun"
+    assert_equal full_title("Help"), "Help | CoffeeRun"
   end
   
 end
