@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   
-  def show
-    @user = User.find(params[:id])
+  # Create new user
+  def new
+    @user = User.new
   end
   
-  def new
+  # Show existing user
+  def show
+    @user = User.find(params[:id])
   end
   
 end
