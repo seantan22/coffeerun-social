@@ -39,6 +39,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   
     # Ensure failed submission re-renders the new action
     assert_template 'users/show'
+    assert_not flash.empty?
     
   end
   
