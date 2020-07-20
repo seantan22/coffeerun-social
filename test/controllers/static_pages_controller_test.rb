@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @base_title = "Social Network App"
+    @base_title = "HomeBuddies"
   end
   
   test "should get root" do
@@ -15,6 +15,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get static_pages_home_url
     assert_response :success
     assert_select "title", "#{@base_title}"
+    
   end
 
   test "should get help" do
