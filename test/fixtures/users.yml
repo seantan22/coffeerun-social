@@ -2,3 +2,8 @@ person_test_data:
   name: John Smith
   email: john.smith@mail.com
   password_digest: <%= User.digest('password') %>
+  
+person_test_data_2:
+  name: Lorem Ipsum
+  email: lorem.ipsum@mail.com
+  password_digest: <%= User.digest('password') %>
