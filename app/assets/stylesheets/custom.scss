@@ -88,6 +88,10 @@ p {
   }
 }
 
+.btn-signup {
+  background-color: black;
+}
+
 
 /* footer */
 
@@ -160,9 +164,15 @@ aside {
   }
 }
 
-.gravatar {
-  float: left; 
-  margin-right: 10px;
+.gravatar-default {
+  margin-right: 10px
+}
+
+.gravatar-profile {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
 }
 
 .gravatar_edit { 
@@ -269,6 +279,23 @@ input {
   p {
     font-size: 18px;
     font-weight: 400;
+  }
+}
+
+.profile {
+  h1 {
+    font-size: 5em;
+  }
+  h2 {
+    font-size: 1em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-weight: 600;
+  }
+  .profile-stats {
+    margin-top: 50px;
   }
 }
   
