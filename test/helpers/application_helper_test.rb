@@ -4,7 +4,7 @@ class ApplicationHelperTest < ActionView::TestCase
   
   test "full title helper" do
     assert_equal full_title, "CoffeeRun"
-    assert_equal full_title("Help"), "Help | CoffeeRun"
+    assert_equal full_title("About"), "About | CoffeeRun"
   end
   
 end

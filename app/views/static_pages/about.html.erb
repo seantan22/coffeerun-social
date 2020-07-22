@@ -1,3 +1,11 @@
 <% provide(:title, "About") %>
-<h1>About</h1>
-<p>CoffeeRun is a web application initially created for students at McGill University. Students can request a beverage and have it delivered directly to their seat in the library. <%= link_to "Sign up now!", signup_path %></p>
+
+  <h1>About</h1>
+  <div class="row description">
+    <div class="col-md-6">
+      <p>CoffeeRun makes getting a coffee easy. Request a beverage through the app and have it delivered directly to your seat in the library. Choose from multiple locations including Tim Hortons and Premiere Moisson. <%= link_to "Sign up now!", signup_path %></p>
+    </div>
+    <div class="col-md-6">
+      <p>Started in 2020 by students at McGill University, the aim of CoffeeRun is to help the student community optimize their study time. </p>
+    </div>
+  </div>

@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top" style="background-color: #E46464;">
 <div class="container">
   <%= link_to "CoffeeRun", root_path, id:"logo" %>
   <nav>
@@ -14,9 +14,9 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right collapse navbar-collapse nav-sections" id="bs-example-navbar-collapse-1">
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Help", help_path %></li>
+      <li><%= link_to "About", about_path %></li>
       <% if logged_in? %>
         <li><%= link_to "Users", users_path %></li>
         <li class="dropdown">

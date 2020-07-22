@@ -6,6 +6,10 @@ $gray: #555;
 $light-gray: #777;
 $mid-light-gray: #eaeaea;
 
+$bg-gray: #F4F5F4;
+
+
+
 @mixin box_sizing { 
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
@@ -15,7 +19,8 @@ $mid-light-gray: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 90px;
+  background-color: $bg-gray;
 }
 
 section { 
@@ -73,6 +78,12 @@ p {
   &:hover {
     color: white; 
     text-decoration: none;
+  }
+}
+
+.nav-sections {
+  a {
+    color: white;
   }
 }
 
@@ -213,5 +224,33 @@ input {
   float: left;
   margin-top: 45px;
   @include box_sizing; 
+}
+
+/* landing page */
+.landing {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $bg-gray;
+  h1 {
+    font-size: 8em;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: 300;
+  }
+}
+
+/* landing page logos */
+.logos {
+  margin-top: 20px;
+}
+
+.description {
+  p {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
   

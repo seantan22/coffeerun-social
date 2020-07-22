@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   before_action :correct_user,    only: [:edit, :update]
   before_action :admin_user,      only: [:destroy]
   
+  # Set a user as admin
+  # rails console
+  # user = User.first
+  # user.toggle!(:admin)
+  
   # New blank user
   def new
     @user = User.new
