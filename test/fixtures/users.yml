@@ -3,15 +3,22 @@ person_test_data:
   email:  john.smith@mail.com
   password_digest: <%= User.digest('password') %>
   admin: true
+  activated: true,
+  activated_at: <%= Time.zone.now %>
+              
   
 person_test_data_2:
   name:   Lorem Ipsum
   email:  lorem.ipsum@mail.com
   password_digest: <%= User.digest('password') %>
+  activated: true,
+  activated_at: <%= Time.zone.now %>
   
 <% 10.times do |n| %>
 user_<%= n %>:
   name:   <%= "User #{n}" %>
   email:  <%= "user-#{n}@mail.com" %>
   password_digest: <%= User.digest('password') %>
+  activated: true,
+  activated_at: <%= Time.zone.now %>
 <% end %>

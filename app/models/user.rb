@@ -1,12 +1,12 @@
 class User < ApplicationRecord
   
   # Create an accessible attribute
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
   
-  # Alternate Notation: before_save { email.downcase! }
-  before_save { self.email = email.downcase }
+  before_save     :downcase_email
+  before_create   :create_activation_digest
+  
  
-  
   validates :name,  presence: true, 
                     length: { maximum: 50 }
   
@@ -52,5 +52,19 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+  
+  private
+  
+    # Convert all emails to lowercase
+    def downcase_email
+      email.downcase! 
+      # self.email = email.downcase (Alternate Notation)
+    end
+    
+    # Creates and assigns the activation token and digest
+    def create_activation_digest
+      self.activation_token = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end
   
 end
