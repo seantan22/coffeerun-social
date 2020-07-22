@@ -9,9 +9,14 @@ gem 'active_storage_validations', '0.8.9'
 # For password hashing
 gem 'bcrypt',                     '3.1.13'
 
+# For creating sample users to seed database
 gem 'faker',                      '2.11.0'
+
+# For pagination
 gem 'will_paginate',              '3.3.0'
 gem 'bootstrap-will_paginate',    '1.0.0'
+
+# For styling
 gem 'bootstrap-sass',             '3.4.1'
 
 # HTTP Webserver
@@ -47,5 +52,6 @@ group :test do
 end
 
 group :production do
+  # PostgreSQL
   gem 'pg',         '1.1.4'
 end
