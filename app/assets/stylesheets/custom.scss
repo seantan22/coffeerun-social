@@ -21,7 +21,8 @@ $bg-gray: #F4F5F4;
 body {
   padding-top: 90px;
   background-color: $bg-gray;
-  font-family: Copperplate !important;
+  // font-family: Copperplate !important;
+  font-family: Didot !important;
 }
 
 section { 
@@ -228,7 +229,7 @@ input {
 }
 
 /* landing page */
-.landing {
+.landingA {
   text-align: center;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -242,10 +243,27 @@ input {
     font-weight: 300;
   }
 }
+.landingB {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: black;
+  h1 {
+    font-size: 3em;
+    font-weight: 500;
+    color: white;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: 300;
+    color: white;
+  }
+}
 
 /* landing page logos */
 .logos {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .description {
