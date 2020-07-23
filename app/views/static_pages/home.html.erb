@@ -3,14 +3,24 @@
   <h2>Fresh Coffee Delivered Right to Your Seat</h2>
   <%= link_to "Sign Up Now!", signup_path, class: "btn btn-lg btn-danger" %>
   <div class="logos center">
-    <%= image_tag("mcgill.jpg", alt: "McGill logo", height: "40") %>
+    <!--<%= image_tag("mcgill.jpg", alt: "McGill logo", height: "40") %>-->
+    <%= image_tag("secondcup.jpg", alt: "Second Cup logo", height: "40") %>
     <%= image_tag("tim_hortons.jpg", alt: "Tim Hortons logo", height: "50") %>
     <%= image_tag("premiere_moison.jpg", alt: "Premiere Moison logo", height: "50") %>
+    <%= image_tag("dispatch.jpg", alt: "Dispatch logo", height: "18") %>
+    <%= image_tag("starbucks.jpg", alt: "Starbucks logo", height: "50") %>
   </div>
 </div>
 
-<div class="landingB">
-  <h1>Number of Students Using CoffeeRun</h1>
+<!--<div class="landingB">-->
+<!--  <h1>How does it work?</h1>-->
+<!--  <h3>CoffeeRun makes getting a coffee easy.</h3>-->
+<!--  <h3>Select your favorite beverage. Pick a library zone. </h3>-->
+<!--  <h3>Choose from multiple locations including Tim Hortons and Premiere Moisson.</h3>-->
+<!--  <%= link_to "Learn More", about_path, class: "btn btn-lg btn-danger" %>-->
+<!--</div>-->
+
+<div class="landingA">
+  <h3>Number of Students Using CoffeeRun</h3>
   <h2><%= User.all.length %></h2>
-  <%= link_to "Learn More", about_path, class: "btn btn-lg btn-danger" %>
 </div>
