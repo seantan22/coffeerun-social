@@ -16,6 +16,7 @@
     </div>
     <ul class="nav navbar-nav navbar-right collapse navbar-collapse nav-sections" id="bs-example-navbar-collapse-1">
       <% if logged_in? %>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Users", users_path %></li>
         <li><%= link_to "Zones", zones_path %></li>
         <li class="dropdown">
@@ -32,7 +33,7 @@
       <% else %>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Login", login_path %></li>
-        <li><%= link_to "Sign Up",signup_path, class: "btn btn-md btn-signup" %></li>
+        <li><%= link_to "Sign Up",signup_path %></li>
       <% end %>
     </ul>
   </nav>

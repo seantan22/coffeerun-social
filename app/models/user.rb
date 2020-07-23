@@ -66,6 +66,11 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
   
+  # User feed
+  def feed
+    Order.where("user_id = ?", id)
+  end
+  
   private
   
     # Convert all emails to lowercase

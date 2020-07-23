@@ -1,0 +1,37 @@
+<%= form_with(model: @order, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    
+    <%= f.label :vendor %>
+    <%= f.select :vendor, options_for_select([  ['Tim Hortons', 'Tim Hortons'], 
+                                                ['Starbucks', 'Starbucks'],
+                                                ['Premiere Moisson', 'Premiere Moisson'],
+                                                ['Dispatch', 'Dispatch'],
+                                                ['Second Cup', 'Second Cup'] ]), 
+                          prompt: "Select One..." %>
+    
+    <%= f.label :item %>
+    <%= f.select :item, options_for_select([  ['Coffee', 'Coffee'], 
+                                              ['Tea', 'Tea'] ]), 
+                          prompt: "Select One..." %>
+    
+    <%= f.label :size %>
+    <%= f.select :size, options_for_select([  ['Small', 'Small'],
+                                              ['Medium', 'Medium'],
+                                              ['Large', 'Large'],
+                                              ['Extra Large', 'Extra Large'] ]), 
+                          prompt: "Select One..." %>
+    
+    <%= f.label :details, "Special Instructions" %>
+    <%= f.text_area :details, placeholder: "Dietary restrictions, extras, etc. ", class: 'form-control' %>
+    
+    <%= f.label :zone %>
+    <%= f.select :zone, options_for_select([  ['McLennan Floor 2', 'McLennan Floor 2'],
+                                              ['McLennan Floor 3', 'McLennan Floor 3'],
+                                              ['McLennan Floor 5', 'McLennan Floor 5'],
+                                              ['McLennan Floor 6', 'McLennan Floor 6'] ]), 
+                          prompt: "Select One..." %>
+    
+  </div>
+  <%= f.submit "Order", class: "btn btn-danger" %>
+<% end %>

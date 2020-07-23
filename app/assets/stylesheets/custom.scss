@@ -88,10 +88,6 @@ p {
   }
 }
 
-.btn-signup {
-  background-color: black;
-}
-
 
 /* footer */
 
@@ -296,7 +292,11 @@ input {
     text-transform: uppercase;
   }
   h3 {
-    font-weight: 600;
+    font-weight: 900;
+    font-size: 2em;
+  }
+  h4 {
+    color: $gray;
   }
   .profile-stats {
     margin-top: 50px;
@@ -335,4 +335,9 @@ input {
     font-style: italic;
     
   }
+}
+
+.new-order {
+  border: 1px solid $light-gray;
+  padding-bottom: 20px;
 }

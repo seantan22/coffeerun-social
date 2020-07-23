@@ -1,10 +1,8 @@
 <li id="order-<%= order.id %>">
-  <%= link_to gravatar_for(order.user, size: 50, type: "gravatar-default"), order.user %>
-  <span class="user"><%= link_to order.user.name, order.user %></span>
+  <!--<%= link_to gravatar_for(order.user, size: 50, type: "gravatar-default"), order.user %>-->
+  <!--<span class="user"><%= link_to order.user.name, order.user %></span>-->
   <span class="vendor">From: <b><%= order.vendor %></b></span>
-  <span class="item">Item: <b><%= order.item %></b></span>
-  <span class="details">Details: <b><%= order.details %></b></span>
-  <span class="size">Size: <b><%= order.size %></b></span>
+  <span class="item">Item: <b><%= order.size %> <%= order.item %> (<%= order.details %>)</b></span>
   <span class="zone">Zone: <b><%= order.zone %></b></span>
   <span class="timestamp">
     Ordered <%= time_ago_in_words(order.created_at) %> ago.

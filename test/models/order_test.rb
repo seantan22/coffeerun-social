@@ -31,8 +31,8 @@ class OrderTest < ActiveSupport::TestCase
     assert_not @order.valid?
   end
   
-  test "details should be less than 140 characters" do
-    @order.details = "a" * 141
+  test "details should be at most 80 characters" do
+    @order.details = "a" * 81
     assert_not @order.valid?
   end
   

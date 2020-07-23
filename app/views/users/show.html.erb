@@ -14,26 +14,33 @@
         <h2>(Account Not Activated)</h2>
       <% end %>
       <div class="profile-stats">
-        <div class="col-md-4 center">
+        <div class="col-md-3 center">
+          <h3>TODO:</h3>
+          <h4>Points</h4>
+        </div>
+        <div class="col-md-3 center">
+          <h3>TODO:</h3>
           <h4>Leaderboard</h4>
-          <h3>#22</h3>
         </div>
-        <div class="col-md-4 center">
-          <h4>Beverages Ordered</h4>
+        <div class="col-md-3 center">
           <h3><%= @user.orders.count %></h3>
+          <h4>Beverages Ordered</h4>
         </div>
-        <div class="col-md-4 center">
+        <div class="col-md-3 center">
+          <h3>TODO:</h3>
           <h4>Beverages Retrieved</h4>
-          <h3>2</h3>
         </div>
       </div>
       <div class="order-log">
-        <% if @user.orders.any? %>
-          <h3 class="center">Orders</h3>
+        <% if @user.orders.any? && @user == current_user %>
+          <h3 class="center">Order History</h3>
           <ol class="orders center">
             <%= render @orders %>
           </ol>
           <%= will_paginate @orders %>
+        <% elsif !@user.orders.any? && @user == current_user %>
+          <h3 class="center"> Order History </h3>
+          <h4 class="center"> <%= link_to "Place your first order now!", root_url %></h4>
         <% end %>
       </div>
     </div>
