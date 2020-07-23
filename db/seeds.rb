@@ -19,3 +19,18 @@ User.create!( name: "Sean Tan",
                 activated: true,
                 activated_at: Time.zone.now)
 end
+
+# Generate orders for a subset of users.
+users = User.order(:created_at).take(6)
+50.times do
+  item = "Coffee" 
+  details = "Almond Milk"
+  vendor = "Tim Hortons"
+  size = "Large"
+  zone = "McLennan 6B"
+  users.each { |user| user.orders.create!(item: item, 
+                                          details: details,
+                                          vendor: vendor,
+                                          size: size,
+                                          zone: zone) }
+end

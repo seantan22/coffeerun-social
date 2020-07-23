@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   # Show existing user
   def show
     @user = User.find(params[:id])
+    @orders = @user.orders.paginate(page: params[:page], per_page: 10)
     # redirect_to root_url and return unless @user.activated?
   end
   

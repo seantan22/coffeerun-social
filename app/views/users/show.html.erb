@@ -20,12 +20,21 @@
         </div>
         <div class="col-md-4 center">
           <h4>Beverages Ordered</h4>
-          <h3>19</h3>
+          <h3><%= @user.orders.count %></h3>
         </div>
         <div class="col-md-4 center">
           <h4>Beverages Retrieved</h4>
           <h3>2</h3>
         </div>
+      </div>
+      <div class="order-log">
+        <% if @user.orders.any? %>
+          <h3 class="center">Orders</h3>
+          <ol class="orders center">
+            <%= render @orders %>
+          </ol>
+          <%= will_paginate @orders %>
+        <% end %>
       </div>
     </div>
 </div>
