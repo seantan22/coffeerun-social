@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # Map association to orders (ONE User HAS MANY Orders)
+  has_many :orders
   
   # Create an accessible attribute
   attr_accessor :remember_token, :activation_token

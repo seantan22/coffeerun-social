@@ -1,0 +1,35 @@
+order_1:
+  item: "Coffee"
+  details: "Extra Hot"
+  vendor: "Tim Hortons"
+  size: "Large"
+  zone: "McLennan 6B"
+  created_at: <%= 3.years.ago %>
+  user: person_test_data
+  
+order_2:
+  item: "Tea"
+  details: "No Sugar"
+  vendor: "Starbucks"
+  size: "Large"
+  zone: "McLennan 3A"
+  created_at: <%= 2.hours.ago %>
+  user: person_test_data
+  
+order_3:
+  item: "Coffee"
+  details: "Almond Milk"
+  vendor: "Second Cup"
+  size: "Medium"
+  zone: "McLennan 2C"
+  created_at: <%= 10.minutes.ago %>
+  user: person_test_data
+
+most_recent:
+  item: "Coffee"
+  details: "None"
+  vendor: "Dispatch"
+  size: "Small"
+  zone: "Redpath B4"
+  created_at: <%= Time.zone.now %>
+  user: person_test_data
