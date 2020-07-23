@@ -78,4 +78,16 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
   
+  test "associated orders are destroyed when user is destroyed" do
+    @user.save
+    @user.orders.create!( item: "Coffee", 
+                          details: "Almond Milk",
+                          vendor: "Tim Hortons",
+                          size: "Large",
+                          zone: "McLennan 6B" )
+    assert_difference 'Order.count', -1 do
+      @user.destroy
+    end
+  end
+  
 end
