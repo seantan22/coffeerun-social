@@ -5,7 +5,7 @@ $dark-gray: #222;
 $gray: #555;
 $light-gray: #777;
 $mid-light-gray: #eaeaea;
-
+$off-white: #fcfcfc;
 $bg-gray: #F4F5F4;
 
 
@@ -219,8 +219,16 @@ input {
   margin: 0;
   li {
     overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $light-gray;
+    padding: 10px 10px;
+    border: 1px solid $mid-light-gray;
+    border-radius: 10px;
+    background-color: $off-white;
+    margin-bottom: 10px;
+  }
+  a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
   }
 }
   
@@ -313,8 +321,11 @@ input {
   list-style: none;
   padding: 0;
   li {
-    padding: 10px 0;
-    border-top: 1px solid $mid-light-gray;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    border: 1px solid $mid-light-gray;
+    background-color: $off-white;
+    border-radius: 10px;
   }
   .user {
     margin-top: 5em;
@@ -358,8 +369,10 @@ input {
 }
 
 .new-order {
-  border: 1px solid $light-gray;
+  border: 1px solid $mid-light-gray;
+  background-color: #EEECE8;
   padding-bottom: 20px;
+  border-radius: 10px;
 }
 
 .stats {
