@@ -1,6 +1,11 @@
-<% if logged_in? %>
+<% if logged_in? && current_user.admin? %>
   <div class="row">
-    <h3>My Dashboard</h3>
+    <h1>Dashboard</h1>
+    <h3 class="center"><%= User.all.count %> Users</h3>
+  </div>
+<% elsif logged_in? && !current_user.admin? %>
+  <div class="row">
+    <h3>My Orders</h3>
     <div class="col-md-4 new-order">
       <h2>New Order</h2>
       <div class="order_form center">
@@ -8,11 +13,11 @@
       </div>
     </div>
     <div class="col-md-8">
-      <h2>Recent Orders</h2>
+      <h2>Most Recent</h2>
       <%= render 'shared/feed' %>
     </div>    
-   </div>
- <% else %>
+  </div>
+<% else %>
   <div class="landingA">
     <h1>CoffeeRun</h1>
     <h2>Fresh Coffee Delivered Right to Your Seat</h2>

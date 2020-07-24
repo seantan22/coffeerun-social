@@ -1,10 +1,21 @@
 <li id="order-<%= order.id %>">
-  <!--<%= link_to gravatar_for(order.user, size: 50, type: "gravatar-default"), order.user %>-->
-  <span class="user"><%= link_to order.user.name, order.user %></span>
-  <span class="vendor">From: <b><%= order.vendor %></b></span>
-  <span class="item">Item: <b><%= order.size %> <%= order.item %> (<%= order.details %>)</b></span>
-  <span class="zone">Zone: <b><%= order.zone %></b></span>
-  <span class="timestamp">
-    Ordered <%= time_ago_in_words(order.created_at) %> ago.
-  </span>
+  <div class="row"> 
+    <!--<%= link_to gravatar_for(order.user, size: 50, type: "gravatar-default"), order.user %>-->
+    <div class="col-md-4">
+      <span class="user"><%= link_to order.user.name, order.user %></span>
+      <% if current_user.admin? || order.user == current_user %>
+      <span class="zone"><%= order.zone %></span>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <span class="item"><b><%= order.vendor %> | <%= order.size %> <%= order.item %></b> (<%= order.details %>)</span>
+      <span class="timestamp">Placed <%= time_ago_in_words(order.created_at) %> ago.</span>
+    </div>
+    <div class="col-md-2">
+      <div class="status-new">New</div>
+      <!--<div class="status-progress">In Progress</div>-->
+      <!--<div class="status-complete">Complete</div>-->
+    </div>
+    
+  </div>
 </li>

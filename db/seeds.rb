@@ -1,8 +1,8 @@
 # Create a main sample user
-User.create!( name: "Sean Tan",
-              email: "seankltan@gmail.com",
-              password: "password",
-              password_confirmation: "password",
+User.create!( name: "CofeeRun",
+              email: "contact@coffeerun.com",
+              password: "coffeerun",
+              password_confirmation: "coffeerun",
               admin: true,
               activated: true,
               activated_at: Time.zone.now)

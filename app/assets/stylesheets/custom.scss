@@ -306,7 +306,7 @@ input {
 /* orders */
 
 .order-log {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .orders {
@@ -319,9 +319,19 @@ input {
   .user {
     margin-top: 5em;
     padding-top: 0;
+    a {
+      color: black;
+      font-size: 18px;
+      font-weight: 800;
+    }
   }
-  .item, .details, .vendor, .size, .zone {
-    margin-left: 60px;
+  .item {
+    font-size: 16px;
+    display: block;
+  }
+  .zone {
+    font-size: 14px;
+    display: block;
   }
   .gravatar {
     float: left;
@@ -332,7 +342,18 @@ input {
     color: $light-gray;
     display: block;
     font-style: italic;
-    
+  }
+  .status-new {
+    color: #55b55b;
+    font-weight: bold;
+  }
+  .status-progress {
+    color: teal;
+    font-weight: bold;
+  }
+  .status-complete {
+    color: #E46464;
+    font-weight: bold;
   }
 }
 

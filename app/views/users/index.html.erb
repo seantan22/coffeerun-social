@@ -1,6 +1,9 @@
 <% provide(:title, 'Users') %>
-<h1>Users</h1>
-
+<% if current_user.admin? %>
+<h1>Users (<%= User.all.count %>)</h1>
+<% else %>
+<h1>Find Your Friends</h1>
+<% end %>
 <%= will_paginate %>
 
 <ul class="users">
