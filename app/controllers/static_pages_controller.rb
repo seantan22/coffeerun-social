@@ -16,6 +16,9 @@ class StaticPagesController < ApplicationController
   def feed
     if logged_in?
       @social_feed_items = current_user.social_feed.paginate(page: params[:page], per_page: 10)
+      @admin_feed_items = current_user.admin_feed.paginate(page: params[:page], per_page: 20)
+    else
+      redirect_to login_path
     end
   end
   

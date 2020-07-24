@@ -1,7 +1,7 @@
 <% if logged_in? && current_user.admin? %>
   <div class="row">
-    <h1>Dashboard</h1>
-    <h3 class="center"><%= User.all.count %> Users</h3>
+    <h1>Admin Console</h1>
+    <h3 class="center">Total Users: <%= User.all.count %></h3>
   </div>
 <% elsif logged_in? && !current_user.admin? %>
   <div class="row">

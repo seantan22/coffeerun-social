@@ -13,12 +13,24 @@
     </div>
     <div class="col-md-2">
       <% if current_user.admin? %>
-        <%= render 'shared/status_form' %>
+        <% if order.status == "New" %>
+          <%= render 'shared/to_progress_form' %>
+        <% elsif order.status == "In Progress" %>
+          <%= render 'shared/to_complete_form' %>
+        <% else %>
+          <div class="status-complete"><%= order.status %></div>
+        <% end %>
       <% else %>
-        <div class="status-new"><%= order.status %></div>
+        <% if order.status == "New" %>
+          <div class="status-new"><%= order.status %></div>
+        <% elsif order.status == "In Progress" %>
+          <div class="status-progress"><%= order.status %></div>
+        <% else %>
+          <div class="status-complete"><%= order.status %></div>
+        <% end %>
       <% end %>
-      <!--<div class="status-progress">In Progress</div>-->
-      <!--<div class="status-complete">Complete</div>-->
+      
+      
     </div>
     
   </div>
