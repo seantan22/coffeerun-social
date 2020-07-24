@@ -4,15 +4,12 @@
       <h2>
         Profile
       </h2>
-      <%= gravatar_for @user, size: 120, type: "gravatar-profile" %>
+      <%= gravatar_for @user, size: 100, type: "gravatar-profile" %>
       <h1>
         <%= @user.name %>
       </h1>
-      <% if @user.activated? %>
-        <h2>Member Since <%= @user.activated_at.strftime("%B %d, %Y") %></h2>
-      <% else %>
-        <h2>(Account Not Activated)</h2>
-      <% end %>
+      <%= render 'shared/stats' %>
+      <%= render 'follow_form' if logged_in? %>
       <div class="profile-stats">
         <div class="col-md-3 center">
           <h3>TODO:</h3>

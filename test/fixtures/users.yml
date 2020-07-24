@@ -14,6 +14,20 @@ person_test_data_2:
   activated: true,
   activated_at: <%= Time.zone.now %>
   
+person_test_data_3:
+  name:   George Washington
+  email:  georgewashington@gmail.com
+  password_digest: <%= User.digest('password') %>
+  activated: true,
+  activated_at: <%= Time.zone.now %>
+  
+person_test_data_4:
+  name:   Steve Jobs
+  email:  stevejobs@gmail.com
+  password_digest: <%= User.digest('password') %>
+  activated: true,
+  activated_at: <%= Time.zone.now %>
+  
 <% 10.times do |n| %>
 user_<%= n %>:
   name:   <%= "User #{n}" %>

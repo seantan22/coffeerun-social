@@ -284,7 +284,7 @@ input {
 
 .profile {
   h1 {
-    font-size: 5em;
+    font-size: 3em;
   }
   h2 {
     font-size: 1em;
@@ -293,7 +293,7 @@ input {
   }
   h3 {
     font-weight: 900;
-    font-size: 2em;
+    font-size: 1.5em;
   }
   h4 {
     color: $gray;
@@ -340,4 +340,25 @@ input {
 .new-order {
   border: 1px solid $light-gray;
   padding-bottom: 20px;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  font-size: 18px;
+  a {
+    color: black;
+    margin: 20px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.btn-follow {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8%;
 }
