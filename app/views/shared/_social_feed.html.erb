@@ -1,0 +1,6 @@
+<% if @social_feed_items.any? %>
+  <ol class="orders">
+    <%= render @social_feed_items %>
+  </ol>
+  <%= will_paginate @social_feed_items, params: { controller: :static_pages, action: :home }, class: "center" %>
+<% end %>

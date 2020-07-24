@@ -17,6 +17,7 @@
     <ul class="nav navbar-nav navbar-right collapse navbar-collapse nav-sections" id="bs-example-navbar-collapse-1">
       <% if logged_in? %>
         <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Orders", feed_path %></li>
         <li><%= link_to "Users", users_path %></li>
         <li><%= link_to "Zones", zones_path %></li>
         <li class="dropdown">

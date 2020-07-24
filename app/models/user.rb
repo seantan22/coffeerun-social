@@ -79,9 +79,16 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
   
-  # User feed
-  def feed
+  # User orders
+  def order_feed
     Order.where("user_id = ?", id)
+  end
+  
+   def social_feed
+    following_ids = "SELECT followed_id FROM relationships
+                      WHERE follower_id = :user_id"
+    Order.where("user_id IN (#{following_ids}) 
+                  OR user_id = :user_id", user_id: id)
   end
   
   # Follows a user

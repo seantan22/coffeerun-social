@@ -26,10 +26,15 @@
     <%= f.text_area :details, placeholder: "Dietary restrictions, extras, etc. ", class: 'form-control' %>
     
     <%= f.label :zone %>
-    <%= f.select :zone, options_for_select([  ['McLennan Floor 2', 'McLennan Floor 2'],
+    <%= f.select :zone, options_for_select([  ['McLennan Floor 1', 'McLennan Floor 1'],
+                                              ['McLennan Floor 2', 'McLennan Floor 2'],
                                               ['McLennan Floor 3', 'McLennan Floor 3'],
                                               ['McLennan Floor 5', 'McLennan Floor 5'],
-                                              ['McLennan Floor 6', 'McLennan Floor 6'] ]), 
+                                              ['McLennan Floor 6', 'McLennan Floor 6'],
+                                              ['Redpath Basement (Cyberthèque)', 'Redpath Basement (Cyberthèque)'],
+                                              ['Redpath Floor 1', 'Redpath Floor 1'],
+                                              ['Redpath Floor 2', 'Redpath Floor 2'],
+                                              ['Redpath Floor 3', 'Redpath Floor 3'] ]), 
                           prompt: "Select One..." %>
     
   </div>

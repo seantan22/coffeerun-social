@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/zones',     to: 'static_pages#zones'
   get '/about',     to: 'static_pages#about'
   get '/contact',   to: 'static_pages#contact'
+  get '/feed',      to: 'static_pages#feed'
   get '/signup',    to: 'users#new'
   get '/login',     to: 'sessions#new'
   post '/login',    to: 'sessions#create'
