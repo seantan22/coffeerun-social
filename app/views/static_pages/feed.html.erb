@@ -1,5 +1,10 @@
 <% if current_user.admin? %>
 <h1>Orders</h1>
+<div class="row">
+  <div class="">
+  <%= render 'shared/social_feed' %>
+  </div>
+</div>
 <% else %>
 <h1>Friend Activity</h1>
 <div class="row">

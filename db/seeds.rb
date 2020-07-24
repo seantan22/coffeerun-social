@@ -1,5 +1,5 @@
 # Create a main sample user
-User.create!( name: "CofeeRun",
+User.create!( name: "CoffeeRun",
               email: "contact@coffeerun.com",
               password: "coffeerun",
               password_confirmation: "coffeerun",
@@ -28,11 +28,13 @@ users = User.order(:created_at).take(6)
   vendor = "Tim Hortons"
   size = "Large"
   zone = "McLennan 6B"
+  status = "New"
   users.each { |user| user.orders.create!(item: item, 
                                           details: details,
                                           vendor: vendor,
                                           size: size,
-                                          zone: zone) }
+                                          zone: zone,
+                                          status: status) }
 end
 
 # Create relationships

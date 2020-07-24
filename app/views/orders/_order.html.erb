@@ -12,7 +12,11 @@
       <span class="timestamp">Placed <%= time_ago_in_words(order.created_at) %> ago.</span>
     </div>
     <div class="col-md-2">
-      <div class="status-new">New</div>
+      <% if current_user.admin? %>
+        <%= render 'shared/status_form' %>
+      <% else %>
+        <div class="status-new"><%= order.status %></div>
+      <% end %>
       <!--<div class="status-progress">In Progress</div>-->
       <!--<div class="status-complete">Complete</div>-->
     </div>

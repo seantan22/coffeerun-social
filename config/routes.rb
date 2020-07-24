@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     end
   end
   resources :account_activations, only: [:edit]
-  resources :orders, only: [:create, :destroy]
+  resources :orders, only: [:create, :destroy, :edit, :update]
   resources :relationships, only: [:create, :destroy]
 end
