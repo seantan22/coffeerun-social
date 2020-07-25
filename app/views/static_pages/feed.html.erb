@@ -1,7 +1,12 @@
 <% if current_user.admin? %>
 <h1>Orders</h1>
 <div class="row">
-  <div class="">
+  <div class="col-md-2">
+    ORDER STATUS</br>
+    Active</br>
+    Completed
+  </div>
+  <div class="col-md-10">
   <%= render 'shared/admin_feed' %>
   </div>
 </div>

@@ -2,8 +2,11 @@
   <%= gravatar_for user, size: 50, type: "gravatar-default" %>
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "Are you sure?" } %>
+  <span class="delete">
+    <%= link_to "X", user, method: :delete, 
+                                class: "btn btn-danger btn-delete",
+                                data: { confirm: "Are you sure?" } %>
+  </span>
   <% end %>
   <!--Total Orders: <%= user.orders.count %>-->
 </li>
