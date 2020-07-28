@@ -4,7 +4,7 @@
     <h3 class="center">Total Users: <%= User.all.count %></h3>
   </div>
 <% elsif logged_in? && !current_user.admin? %>
-  <div class="row">
+  <div class="row my-orders">
     <h3>My Orders</h3>
     <div class="col-md-4 new-order">
       <h2>New Order</h2>

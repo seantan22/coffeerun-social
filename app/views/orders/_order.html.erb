@@ -14,11 +14,27 @@
     <div class="col-md-3 order-status">
       <% if current_user.admin? %>
         <% if order.status == "New" %>
-          <%= render 'shared/to_progress_form' %>
+            <!--TODO: Reconfigure form into partial-->
+            <%= form_with(model: @order, method: :patch, url: order_path(order.id), local: true) do |f| %>
+              <div class="field">
+                <%= hidden_field_tag 'status', 'In Progress'  %>
+              </div>
+              <div class="">
+                <%= f.submit "Mark as In Progress", class: "btn btn-light btn-status" %>
+              </div>
+            <% end %>
         <% elsif order.status == "In Progress" %>
-          <%= render 'shared/to_complete_form' %>
+            <!--TODO: Reconfigure form into partial-->
+            <%= form_with(model: @order, method: :patch, url: order_path(order.id), local: true) do |f| %>
+              <div class="field">
+                <%= hidden_field_tag 'status', 'Complete'  %>
+              </div>
+              <div class="">
+                <%= f.submit "Mark as Complete", class: "btn btn-light btn-status" %>
+              </div>
+            <% end %>
         <% else %>
-          <div class="status-complete"><%= order.status %></div>
+          <div class="center"><%= order.status %></div>
         <% end %>
       <% else %>
         <% if order.status == "New" %>

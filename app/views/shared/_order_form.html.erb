@@ -25,7 +25,7 @@
     
     <%= f.label :details, "Special Instructions" %>
     <%= f.text_area :details, placeholder: "Dietary restrictions, extras, etc. ", class: 'form-control' %>
-    
+    <hr></hr>
     <%= f.label :zone %>
     <%= f.select :zone, options_for_select([  ['McLennan Floor 1', 'McLennan Floor 1'],
                                               ['McLennan Floor 2', 'McLennan Floor 2'],
@@ -39,5 +39,5 @@
                           prompt: "Select One..." %>
     
   </div>
-  <%= f.submit "Order", class: "btn btn-danger" %>
+  <%= f.submit "Order", class: "btn btn-danger order-btn" %>
 <% end %>
