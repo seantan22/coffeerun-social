@@ -1,6 +1,6 @@
 # Create a main sample user
 User.create!( name: "CoffeeRun",
-              email: "contact@coffeerun.com",
+              email: "admin@coffeerun.com",
               password: "coffeerun",
               password_confirmation: "coffeerun",
               admin: true,

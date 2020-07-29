@@ -1,7 +1,64 @@
 <% if logged_in? && current_user.admin? %>
-  <div class="row">
-    <h1>Admin Console</h1>
-    <h3 class="center">Total Users: <%= User.all.count %></h3>
+  
+  <h1>Admin Console</h1>
+  <div class="row justify-content-between">
+    <div class="col-md-4 admin-console-section">
+      <h2>App</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4 center">
+          <div class="dash-stat-num"><%= User.all.count - 1 %></div>
+          <div class="dash-stat-label">Total Users</div>
+        </div>
+        <div class="col-md-4 center">
+          <div class="dash-stat-num"><%= Order.all.count %></div>
+          <div class="dash-stat-label">Total Orders</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 admin-console-section">
+      <h2><%= link_to "Orders", feed_path %></h2>
+      <div class="row justify-content-between">
+        <div class="col-md-2 center">
+           <div class="dash-stat-num"><%= Order.all.count {|order| order.status?("New") } %></div>
+          <div class="dash-stat-label">New</div>
+        </div>
+        <div class="col-md-3 center">
+           <div class="dash-stat-num"><%= Order.all.count {|order| order.status?("In Progress") } %></div>
+          <div class="dash-stat-label">In Progress</div>
+        </div>
+        <div class="col-md-2 center">
+          <div class="dash-stat-num"><%= Order.all.count {|order| order.status?("Complete")} %></div>
+          <div class="dash-stat-label">Complete</div> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-10 admin-console-section">
+      <h2>Vendors</h2>
+      <div class="row center justify-content-center">
+        <div class="col-md-2">
+          <div class="dash-stat-label">Tim Hortons</div>
+          <div class="dash-stat-num"><%= Order.all.count {|order| order.vendor?("Tim Hortons")} %></div>
+        </div>
+        <div class="col-md-2">
+          <div class="dash-stat-label">Starbucks</div>
+          <div class="dash-stat-num"><%= Order.all.count {|order| order.vendor?("Starbucks")} %></div>
+        </div>
+        <div class="col-md-3">
+          <div class="dash-stat-label">Premiere Moisson</div>
+          <div class="dash-stat-num"><%= Order.all.count {|order| order.vendor?("Premiere Moisson")} %></div>
+        </div>
+        <div class="col-md-2">
+          <div class="dash-stat-label">Dispatch</div>
+          <div class="dash-stat-num"><%= Order.all.count {|order| order.vendor?("Dispatch")} %></div>
+        </div>
+        <div class="col-md-2">
+          <div class="dash-stat-label">Second Cup</div>
+          <div class="dash-stat-num"><%= Order.all.count {|order| order.vendor?("Second Cup")} %></div>
+        </div>
+      </div>
+    </div>
   </div>
 <% elsif logged_in? && !current_user.admin? %>
   <div class="row my-orders">
@@ -21,7 +78,9 @@
   <div class="landingA">
     <h1>CoffeeRun</h1>
     <h2>Fresh Coffee Delivered Right to Your Seat</h2>
-    <%= link_to "Sign Up Now!", signup_path, class: "btn btn-lg btn-danger" %>
+    <div class="justify-content-center">
+      <%= link_to "Sign Up Now!", signup_path, class: "btn-gray" %>
+    </div>
     <div class="logos center">
       <!--<%= image_tag("mcgill.jpg", alt: "McGill logo", height: "40") %>-->
       <%= image_tag("secondcup.jpg", alt: "Second Cup logo", height: "40") %>
@@ -31,17 +90,4 @@
       <%= image_tag("starbucks.jpg", alt: "Starbucks logo", height: "50") %>
     </div>
   </div>
-  
-  <!--<div class="landingB">-->
-  <!--  <h1>How does it work?</h1>-->
-  <!--  <h3>CoffeeRun makes getting a coffee easy.</h3>-->
-  <!--  <h3>Select your favorite beverage. Pick a library zone. </h3>-->
-  <!--  <h3>Choose from multiple locations including Tim Hortons and Premiere Moisson.</h3>-->
-  <!--  <%= link_to "Learn More", about_path, class: "btn btn-lg btn-danger" %>-->
-  <!--</div>-->
-  
-  <!--<div class="landingA">-->
-  <!--  <h3>Number of Students Using CoffeeRun</h3>-->
-  <!--  <h2><%= User.all.length %></h2>-->
-  <!--</div>-->
 <% end %>

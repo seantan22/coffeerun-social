@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   root "static_pages#home"
-  get '/zones',             to: 'static_pages#zones'
   get '/how',               to: 'static_pages#how'
   get '/about',             to: 'static_pages#about'
   get '/contact',           to: 'static_pages#contact'

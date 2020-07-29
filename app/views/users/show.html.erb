@@ -4,18 +4,17 @@
       <h2>
         Profile
       </h2>
-      <%= gravatar_for @user, size: 100, type: "gravatar-profile" %>
       <h1>
         <%= @user.name %>
       </h1>
       <%= render 'shared/stats' %>
       <%= render 'follow_form' if logged_in? %>
-      <% if @user.name == current_user.name %>
-        <div class="center">
-          <h3>$29.41</h3>
-          <h4>Account Balance</h4>
-        </div>
-      <% end %>
+      <!--<% if @user.name == current_user.name %>-->
+      <!--  <div class="center">-->
+      <!--    <h3>$29.41</h3>-->
+      <!--    <h4>Account Balance</h4>-->
+      <!--  </div>-->
+      <!--<% end %>-->
       <% if !current_user.admin? %>
       <div class="profile-stats">
         <div class="col-md center">
@@ -28,7 +27,7 @@
         <div class="order-log">
           <% if @user.orders.any? && @user == current_user %>
             <h3 class="center">Order History</h3>
-            <ol class="orders center">
+            <ol class="orders">
               <%= render @orders %>
             </ol>
             <%= will_paginate @orders %>

@@ -39,6 +39,20 @@ textarea {
   }
 }
 
+.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.justify-content-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mt-5 {
+  margin-top: 50px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 { 
@@ -66,6 +80,34 @@ p {
   line-height: 1.7em;
 }
 
+.btn-tan {
+  
+  font-size: 18px;
+  background: #EEECE8;
+  border: 3px solid $cr-red;
+  box-sizing: border-box;
+  border-radius: 68px;
+  font-style: normal;
+  line-height: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-gray {
+
+  font-size: 18px;
+  background: $bg-gray;
+  border: 3px solid $cr-red;
+  box-sizing: border-box;
+  border-radius: 68px;
+  line-height: 40px;
+  display: flex;
+  justify-content: center;
+  width: 350px;
+ 
+}
+
+
 /* header */
 
 #logo {
@@ -82,10 +124,21 @@ p {
   }
 }
 
-.nav-sections {
-  a {
+.navbar {
+  background-color: $cr-red;
+   a {
     color: white;
   }
+}
+.navbar-right {
+  font-family: Tahoma;
+}
+.nav > li > a:hover, .nav > li > a:focus, .nav > li > a:active {
+    background-color: $cr-red;
+}
+
+.navbar .navbar-nav > li.open > a, {
+    background-color: $cr-red;
 }
 
 
@@ -159,21 +212,6 @@ aside {
     } 
   }
 }
-
-.gravatar-default {
-  margin-right: 10px
-}
-
-.gravatar-profile {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100%;
-}
-
-.gravatar_edit { 
-  margin-top: 15px;
-}
   
 /* forms */
 input, textarea, select, .uneditable-input {
@@ -185,6 +223,11 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+.field label, textarea {
+  font-family: Tahoma;
+  font-weight: normal;
 }
 
 #error_explanation {
@@ -255,6 +298,10 @@ input {
     font-size: 2em;
     font-weight: 300;
   }
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 .how-step {
   margin-top: 30px;
@@ -264,6 +311,35 @@ input {
   padding-left: 150px;
   padding-right: 150px;
   background-color: #EEECE8;
+  h1 {
+    font-size: 2em;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: 300;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  p {
+    margin-top: 15px;
+  }
+}
+
+.admin-console-section {
+  margin-top: 15px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #EEECE8;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  a {
+    color: $light-gray;
+    text-decoration: none;
+  }
   h1 {
     font-size: 2em;
     font-weight: 500;
@@ -334,6 +410,7 @@ input {
   list-style: none;
   padding: 0;
   li {
+    font-family: Verdana;
     padding: 10px 10px;
     margin-bottom: 10px;
     border: 1px solid $mid-light-gray;
@@ -347,21 +424,18 @@ input {
     a {
       color: black;
       font-size: 18px;
-      font-weight: 800;
+      
     }
   }
   .item {
+    font-family: Tahoma;
     font-size: 16px;
     display: block;
   }
   .zone {
     font-size: 14px;
     display: block;
-  }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
+    opacity: 0.75;
   }
   .timestamp {
     color: $light-gray;
@@ -373,15 +447,13 @@ input {
   }
   .status-new {
     color: #55b55b;
-    font-weight: bold;
+    
   }
   .status-progress {
-    color: #b55555;
-    font-weight: bold;
+    color: #556fb5;
   }
   .status-complete {
     color: grey;
-    font-weight: bold;
   }
 }
 
@@ -390,6 +462,7 @@ input {
   background-color: #EEECE8;
   padding-bottom: 20px;
   border-radius: 10px;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
 }
 
 .stats {
@@ -473,13 +546,36 @@ hr {
   border-style: inset;
 }
 
-.order-btn {
-  margin-top: 10px;
-}
-
 .my-orders {
  h2 {
    text-transform: uppercase;
    font-size: 12px;
  } 
+}
+
+.dash-stat-num {
+  display: block;
+  font-size: 30px;
+}
+
+.dash-stat-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: .7;
+}
+
+.vendor-stat-num {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.vendor-stat-label {
+  display: inline-block;
+  font-size: 20px;
+}
+
+.user-find {
+  font-family: Verdana;
 }

@@ -7,4 +7,13 @@ class Order < ApplicationRecord
   validates :vendor,  presence: true
   validates :size,    presence: true
   validates :zone,    presence: true
+  
+  def status?(status)
+    self.status == status
+  end
+  
+  def vendor?(vendor)
+    self.vendor == vendor
+  end
+  
 end
