@@ -20,7 +20,7 @@ gem 'bootstrap-will_paginate',    '1.0.0'
 gem 'bootstrap-sass',             '3.4.1'
 
 # HTTP Webserver
-gem 'puma',                       '4.3.5'
+gem 'puma',                       '4.3.12'
 
 gem 'sass-rails',                 '6.0.0'
 gem 'webpacker',                  '4.2.2'
